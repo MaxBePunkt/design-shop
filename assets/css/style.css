@@ -1,0 +1,205 @@
+/* 
+##################################
+        GENERAL
+##################################
+*/
+@import url("https://fonts.googleapis.com/css2?family=Karla:ital,wght@0,200;0,300;0,400;0,500;0,600;0,700;0,800;1,200;1,300;1,400;1,500;1,600;1,700;1,800&display=swap");
+/* 
+Farbe:
+#323A45
+#848484
+*/
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+html {
+  font-size: 100%;
+}
+body {
+  max-width: 1440px;
+  margin: 0 auto;
+  font-family: "Karla", sans-serif;
+  color: #323a45;
+}
+.wrapper {
+  width: 90%;
+  margin: 0 auto;
+}
+/* 
+##################################
+        HEADER
+##################################
+*/
+h1 {
+  font-size: 1.2rem;
+}
+header {
+  display: flex;
+  padding: 5% 0;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: center;
+}
+/* 
+# # # # # # # # # # # # # # 
+        NAV
+# # # # # # # # # # # # # # 
+*/
+#navMobile {
+  display: none;
+}
+.navBurger {
+  cursor: pointer;
+  display: none;
+}
+.navBurger span {
+  display: block;
+  width: 30px;
+  height: 4px;
+  margin: 3px;
+  background-color: #333;
+}
+nav ul {
+  list-style: none;
+  display: flex;
+}
+nav ul li a {
+  padding: 0 0 0 50px;
+}
+header a {
+  text-decoration: none;
+  color: #323a45;
+  padding-left: 50px;
+  font-weight: 600;
+  padding: 0;
+}
+header a:hover {
+  color: #848484;
+}
+
+/* 
+##################################
+        MAIN
+##################################
+*/
+main section {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 30px;
+  margin: 0 0 10% 0;
+}
+main section article:first-of-type {
+  grid-column: 1/4;
+}
+main section article a {
+  transition: 0.5s ease;
+}
+main section article a:hover {
+  opacity: 0.5;
+}
+main section article img {
+  width: 100%;
+}
+main section article div {
+  display: flex;
+  justify-content: space-between;
+  margin: 1% 0;
+}
+main section article p,
+footer article p {
+  font-weight: 600;
+}
+main section article span,
+footer article span {
+  color: #848484;
+}
+/* 
+##################################
+        FOOTER
+##################################
+*/
+footer {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  line-height: 1.5;
+}
+.FooterPLighter {
+  font-size: 0.9rem;
+  font-weight: 300;
+  /* line-height: 2; */
+}
+footer article {
+  padding: 5%;
+}
+footer article p:first-of-type {
+  margin: 0 0 10% 0;
+}
+footer article a {
+  text-decoration: none;
+  color: #323a45;
+  font-size: 0.9rem;
+  font-weight: 600;
+}
+footer article:nth-of-type(2) a,
+footer article:nth-of-type(4) a {
+  display: block;
+}
+footer article:nth-of-type(3) p:not(p:first-of-type) {
+  font-size: 0.9rem;
+  font-weight: 300;
+}
+footer article:nth-of-type(3) p:nth-of-type(3) {
+  font-style: italic;
+}
+footer article:last-of-type span {
+  font-size: 0.8rem;
+}
+/* 
+##################################
+        MEDIA QUERIES
+##################################
+*/
+@media only screen and (max-width: 600px) {
+  html {
+    font-size: 150%;
+  }
+  main section {
+    grid-template-columns: 1fr;
+    gap: 10px 0;
+    flex-wrap: wrap;
+    margin: 0 0 10% 0;
+  }
+  main section article {
+    grid-column: 1/2;
+  }
+  .navBrowser {
+    display: none;
+  }
+  #navMobile {
+    position: absolute;
+    top: 0;
+    width: 100%;
+    right: 0;
+    height: 75%;
+    display: grid;
+    align-items: center;
+    text-align: center;
+    justify-content: center;
+    transform: translateY(-100%);
+    transition: 0.5s ease;
+    background-color: #fff;
+  }
+  #navMobile li a {
+    padding: 0;
+  }
+  .navBurger {
+    display: block;
+  }
+
+  footer {
+    grid-template-columns: 1fr;
+    padding: 10% 0 1% 0;
+  }
+}
